@@ -16,13 +16,13 @@ if (!isset($auth_user)) return;
                 <span class="text-slate-400 text-sm">·</span>
                 <span class="text-slate-400 text-sm">
                     <!-- TODO: 投稿日時(created_at)を「YYYY年MM月DD日」形式 -->
-                    <?= h($tweet['created_at']) ?>
+                    <?= h(date('Y年m月d日', strtotime($tweet['created_at']))) ?>
                 </span>
             </div>
             <div class="tweet-message mt-1 text-slate-800 text-sm leading-relaxed" data-id="<?= (int) $tweet['id'] ?>">
                 <!-- TODO: メッセージリンク: home/detail.php?id= でGETパラメータ -->
                 <!-- TODO: メッセージ(message)を改行つきで表示 -->
-                <?= h($tweet['message']) ?>
+                <?= nl2br(h($tweet['message'])) ?>
             </div>
 
             <?php if (!empty($tweet['image_path'])) : ?>
