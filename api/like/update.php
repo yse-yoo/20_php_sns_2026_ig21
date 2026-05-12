@@ -42,6 +42,7 @@ $liked = $like->fetch($tweet_id, $user_id);
 // 連想配列に格納
 $data = ['like_count' => $like_count, 'liked' => $liked];
 // TODO: json_encode() で $data をJSON文字列に変換して $json に代入
+
 // オプション: JSON_UNESCAPED_UNICODE
 $json = json_encode($data, JSON_UNESCAPED_UNICODE);
 // JSON出力
